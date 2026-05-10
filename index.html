@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gowtham Doppalapudi | Java Full Stack Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&family=Raleway:wght@800;900&display=swap" rel="stylesheet">
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gowtham Doppalapudi | Java Full Stack Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&family=Raleway:wght@800;900&display=swap" rel="stylesheet">
+<style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
@@ -173,14 +173,15 @@ nav ul li a.active { color: var(--text); background: rgba(216,125,255,0.12); }
   font-family: 'Raleway', sans-serif;
   font-size: clamp(2rem, 4.5vw, 3.8rem);
   font-weight: 900;
-  line-height: 1.15;
+  line-height: 1.1;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  color: #fff;
   margin-bottom: 0.6rem;
+  white-space: nowrap;
 }
 .grad-text {
-  display: block;
-  background: linear-gradient(90deg, #7ee8fa 0%, #d87dff 100%);
+  background: linear-gradient(90deg, #38bdf8 0%, #818cf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -331,6 +332,19 @@ section { padding: 5.5rem 2rem; max-width: 1120px; margin: 0 auto; }
 .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: start; }
 .about-text p { font-size: 0.96rem; color: var(--text-dim); line-height: 1.85; margin-bottom: 1.1rem; }
 .about-text p strong { color: var(--text); font-weight: 600; }
+
+.about-info { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-top: 2rem; }
+.info-chip {
+  background: rgba(216,125,255,0.06);
+  border: 1px solid rgba(216,125,255,0.14);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  transition: border-color 0.2s;
+}
+.info-chip:hover { border-color: var(--border-hover); }
+.info-chip-label { font-size: 0.6rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.13em; margin-bottom: 0.25rem; }
+.info-chip-val { font-size: 0.84rem; color: var(--text); font-weight: 500; word-break: break-word; overflow-wrap: break-word; }
+.info-chip-val.green { color: var(--green); }
 
 .cert-panel {
   background: rgba(216,125,255,0.05);
@@ -495,6 +509,48 @@ section { padding: 5.5rem 2rem; max-width: 1120px; margin: 0 auto; }
 .ei-name { font-size: 0.84rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
 .ei-desc { font-size: 0.72rem; color: var(--text-muted); line-height: 1.5; }
 
+.about-contact-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.about-pill {
+  font-size: 0.74rem; color: var(--text-dim);
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 50px; padding: 0.3rem 0.85rem;
+}
+.about-pill.green { color: var(--green); border-color: rgba(94,234,212,0.25); background: rgba(94,234,212,0.07); }
+
+/* portfolio experience cards */
+.exp-card-top {
+  display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.1rem; flex-wrap: wrap;
+}
+.exp-co-icon {
+  width: 48px; height: 48px; border-radius: 14px;
+  background: rgba(216,125,255,0.1); border: 1px solid rgba(216,125,255,0.22);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+}
+.exp-meta { flex: 1; min-width: 0; }
+.exp-summary {
+  font-size: 0.9rem; color: var(--text-dim); line-height: 1.72;
+  border-left: 2px solid rgba(216,125,255,0.38); padding-left: 1rem;
+  margin-bottom: 1.25rem; font-style: italic;
+}
+.exp-highlights {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.65rem; margin-bottom: 1.25rem;
+}
+.highlight-card {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px; padding: 0.9rem; transition: all 0.2s;
+}
+.highlight-card:hover {
+  border-color: rgba(216,125,255,0.32); background: rgba(216,125,255,0.06); transform: translateY(-2px);
+}
+.highlight-icon { font-size: 1.1rem; display: block; margin-bottom: 0.4rem; }
+.highlight-label {
+  font-size: 0.62rem; font-weight: 700; color: var(--primary);
+  text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.3rem;
+}
+.highlight-body { font-size: 0.78rem; color: var(--text-dim); line-height: 1.55; }
+
 /* contact form */
 .contact-form-wrap {
   margin-top: 2.5rem;
@@ -601,16 +657,9 @@ footer {
 }
 footer strong { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
-/* scroll progress + nav scrolled */
-#scroll-progress { position:fixed; top:0; left:0; height:3px; background:var(--grad); z-index:2001; width:0%; pointer-events:none; border-radius:0 2px 2px 0; }
-nav.scrolled { background:rgba(7,1,15,0.97); box-shadow:0 4px 30px rgba(0,0,0,0.5); border-bottom-color:rgba(216,125,255,0.22); }
-
-/* reveal variants */
-.reveal { opacity:0; transform:translateY(28px); transition:opacity 0.58s ease, transform 0.58s ease; }
-.reveal-left { opacity:0; transform:translateX(-36px); transition:opacity 0.62s ease, transform 0.62s ease; }
-.reveal-right { opacity:0; transform:translateX(36px); transition:opacity 0.62s ease, transform 0.62s ease; }
-.reveal-scale { opacity:0; transform:scale(0.93) translateY(16px); transition:opacity 0.65s ease, transform 0.65s ease; }
-.reveal.visible, .reveal-left.visible, .reveal-right.visible, .reveal-scale.visible { opacity:1; transform:none; }
+/* scroll reveal */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.58s ease, transform 0.58s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* scrollbar */
 ::-webkit-scrollbar { width: 5px; }
@@ -624,15 +673,15 @@ nav.scrolled { background:rgba(7,1,15,0.97); box-shadow:0 4px 30px rgba(0,0,0,0.
 }
 @media (max-width: 640px) {
   nav ul { display: none; }
+  .about-info { grid-template-columns: 1fr; }
   .hero-stats { gap: 0.75rem; }
   .timeline { padding-left: 1.5rem; }
   .exp-dot { left: -1.95rem; }
   .contact-val { font-size: 0.78rem; }
 }
-  </style>
+</style>
 </head>
 <body>
-<div id="scroll-progress"></div>
 
 <!-- Anime canvas background -->
 <canvas id="anime-bg"></canvas>
@@ -658,24 +707,23 @@ nav.scrolled { background:rgba(7,1,15,0.97); box-shadow:0 4px 30px rgba(0,0,0,0.
     <div class="hero-eyebrow"><span class="dot"></span>Open to Opportunities</div>
 
     <h1 class="hero-name">
-      <span class="grad-text">Gowtham</span>
-      <span class="grad-text">Doppalapudi</span>
+      Gowtham <span class="grad-text">Doppalapudi</span>
     </h1>
 
-    <p class="hero-role"><strong>Java Full Stack Developer</strong> &nbsp;·&nbsp; 6+ Years of Enterprise Experience</p>
+    <p class="hero-role"><strong>Java Full Stack Developer</strong> &nbsp;·&nbsp; 3+ Years of Enterprise Experience</p>
 
     <div class="tech-pill-row">
       <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/java/java-original.svg" alt="Java">Java</div>
       <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/spring/spring-original.svg" alt="Spring Boot">Spring Boot</div>
-      <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/react/react-original.svg" alt="React">React</div>
       <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/angularjs/angularjs-original.svg" alt="Angular">Angular</div>
       <div class="tech-pill"><span class="aws-lbl">AWS</span>AWS</div>
       <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/docker/docker-original.svg" alt="Docker">Docker</div>
+      <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mongodb/mongodb-original.svg" alt="MongoDB">MongoDB</div>
     </div>
 
     <div class="hero-stats">
-      <div class="stat-card"><span class="stat-num">6+</span><span class="stat-lbl">Years Active</span></div>
-      <div class="stat-card"><span class="stat-num">4</span><span class="stat-lbl">Companies</span></div>
+      <div class="stat-card"><span class="stat-num">3+</span><span class="stat-lbl">Years Active</span></div>
+      <div class="stat-card"><span class="stat-num">3</span><span class="stat-lbl">Companies</span></div>
       <div class="stat-card"><span class="stat-num">M.S.</span><span class="stat-lbl">Comp. Science</span></div>
       <div class="stat-card"><span class="stat-num">AWS</span><span class="stat-lbl">Certified</span></div>
     </div>
@@ -697,53 +745,53 @@ nav.scrolled { background:rgba(7,1,15,0.97); box-shadow:0 4px 30px rgba(0,0,0,0.
 <div class="section-wrap">
 <section id="about">
   <div class="section-eyebrow">About Me</div>
+  <!-- <h2 class="section-title">Full Stack Engineer<br>Based in Texas, USA</h2> -->
+  <!--<p class="section-sub">Building scalable backend systems and intuitive frontends since 2021.</p> -->
 
-  <div class="about-grid">
-    <div class="about-text reveal-left">
-      <p>Results-driven <strong>Java Full Stack Developer</strong> with <strong>6+ years</strong> of IT experience in analysis, design, development, implementation, and testing of enterprise-grade software using <strong>Java/J2EE</strong> technologies.</p>
-      <p>Specialized in architecting <strong>microservices</strong> with Spring Boot and REST, building reactive UIs with <strong>React and Angular</strong>, and deploying production systems on <strong>AWS and Azure</strong> cloud environments.</p>
-      <p>Delivered high-impact solutions across <strong>real estate, telecom, retail, and pharmaceutical</strong> domains — following Agile/Scrum, TDD, CI/CD, and 12-factor app principles.</p>
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <p>I'm a <strong>Java Full Stack Engineer</strong> with <strong>3+ years</strong> building enterprise software at companies like Digital Realty and Crown Castle. I turn complex requirements into clean, secure, and scalable systems that teams rely on every day.</p>
+      <p>My work spans the full stack — from <strong>Spring Boot microservices and JWT-secured APIs</strong> on the backend to <strong>Angular UIs</strong> on the frontend, shipped via <strong>Docker and AWS</strong> cloud infrastructure.</p>
 
       <div class="expertise-row">
         <div class="expertise-item">
           <span class="ei-icon">☕</span>
           <div>
             <div class="ei-name">Backend Engineering</div>
-            <div class="ei-desc">Java · Spring Boot · Spring Cloud · Microservices · REST/SOAP · OAuth 2.0 · JPA/Hibernate</div>
+            <div class="ei-desc">Java · Spring Boot · Microservices · REST APIs · Spring Security · JPA/Hibernate</div>
           </div>
         </div>
         <div class="expertise-item">
           <span class="ei-icon">⚡</span>
           <div>
             <div class="ei-name">Frontend Development</div>
-            <div class="ei-desc">React.js · Angular · TypeScript · JavaScript · Redux · Node.js · Bootstrap</div>
+            <div class="ei-desc">Angular · TypeScript · JavaScript · Bootstrap · HTML5 · CSS3</div>
           </div>
         </div>
         <div class="expertise-item">
           <span class="ei-icon">☁️</span>
           <div>
             <div class="ei-name">Cloud & DevOps</div>
-            <div class="ei-desc">AWS EC2/ECS/EKS · Azure · Docker · Kubernetes · Jenkins CI/CD · PCF</div>
+            <div class="ei-desc">AWS ECS · Docker · Jenkins CI/CD · AWS RDS · Git · Maven</div>
           </div>
         </div>
       </div>
 
+      <div class="about-contact-row">
+        <!-- <span class="about-pill">📍 Texas, USA</span> -->
+        <!-- <span class="about-pill">📞 (346) 203-6169</span> -->
+        <!-- <span class="about-pill">✉️ doppalapudigowtham68@gmail.com</span> -->
+        <!-- <span class="about-pill green">✦ Open to Opportunities</span> -->
+      </div>
     </div>
 
-    <div class="reveal-right">
+    <div>
       <div class="cert-panel">
         <div class="cert-panel-hdr">Certifications &amp; Degrees</div>
         <div class="cert-item">
-          <div class="cert-badge-icon">☕</div>
-          <div>
-            <div class="cert-name">Oracle Certified Professional</div>
-            <div class="cert-org">Java SE Developer · Oracle Corporation · Active</div>
-          </div>
-        </div>
-        <div class="cert-item">
           <div class="cert-badge-icon">AWS</div>
           <div>
-            <div class="cert-name">AWS Certified Developer</div>
+            <div class="cert-name">AWS Certified Solutions Architect</div>
             <div class="cert-org">Associate · Amazon Web Services · Active</div>
           </div>
         </div>
@@ -751,7 +799,14 @@ nav.scrolled { background:rgba(7,1,15,0.97); box-shadow:0 4px 30px rgba(0,0,0,0.
           <div class="cert-badge-icon">M.S.</div>
           <div>
             <div class="cert-name">Master's in Computer Science</div>
-            <div class="cert-org">University of Houston · 2023</div>
+            <div class="cert-org">University of Houston Clear Lake · 2023</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge-icon">B.E.</div>
+          <div>
+            <div class="cert-name">Bachelor's in CS &amp; Engineering</div>
+            <div class="cert-org">Bapatla Engineering College, India · 2020</div>
           </div>
         </div>
       </div>
@@ -766,35 +821,30 @@ nav.scrolled { background:rgba(7,1,15,0.97); box-shadow:0 4px 30px rgba(0,0,0,0.
 <section id="skills">
   <div class="section-eyebrow">Technologies</div>
   <h2 class="section-title">Tech Stack</h2>
-  <p class="section-sub">Tools and technologies I use to build robust, production-grade applications.</p>
+  <p class="section-sub">Tools and technologies I work with to build robust, production-grade applications.</p>
 
   <div class="tech-section reveal">
 
     <div>
       <div class="tech-cat-title">Backend &amp; Java</div>
       <div class="tech-chips">
-        <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/java/java-original.svg" alt="Java"><span>Java 8+</span></div>
+        <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/java/java-original.svg" alt="Java"><span>Java</span></div>
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/spring/spring-original.svg" alt="Spring Boot"><span>Spring Boot</span></div>
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/spring/spring-original.svg" alt="Spring MVC"><span>Spring MVC</span></div>
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/spring/spring-original.svg" alt="Spring Security"><span>Spring Security</span></div>
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/hibernate/hibernate-plain.svg" alt="Hibernate"><span>JPA / Hibernate</span></div>
         <div class="tech-chip"><span style="font-size:1.1rem">🔗</span><span>Microservices</span></div>
-        <div class="tech-chip"><span style="font-size:1.1rem">🔑</span><span>OAuth 2.0 / JWT</span></div>
-        <div class="tech-chip"><span style="font-size:1.1rem">📡</span><span>REST / SOAP</span></div>
-        <div class="tech-chip"><span style="font-size:1.1rem">☕</span><span>J2EE / Servlets</span></div>
-        <div class="tech-chip"><span style="font-size:1.1rem">⚡</span><span>Lambda / Streams</span></div>
+        <div class="tech-chip"><span style="font-size:1.1rem">🔑</span><span>JWT / OAuth2</span></div>
+        <div class="tech-chip"><span style="font-size:1.1rem">📡</span><span>RESTful APIs</span></div>
       </div>
     </div>
 
     <div>
       <div class="tech-cat-title">Frontend</div>
       <div class="tech-chips">
-        <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/react/react-original.svg" alt="React"><span>React.js</span></div>
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/angularjs/angularjs-original.svg" alt="Angular"><span>Angular</span></div>
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/typescript/typescript-original.svg" alt="TypeScript"><span>TypeScript</span></div>
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/javascript/javascript-original.svg" alt="JavaScript"><span>JavaScript</span></div>
-        <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/redux/redux-original.svg" alt="Redux"><span>Redux</span></div>
-        <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/html5/html5-original.svg" alt="HTML5"><span>HTML5</span></div>
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/css3/css3-original.svg" alt="CSS3"><span>CSS3</span></div>
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"><span>Bootstrap</span></div>
@@ -804,17 +854,14 @@ nav.scrolled { background:rgba(7,1,15,0.97); box-shadow:0 4px 30px rgba(0,0,0,0.
     <div>
       <div class="tech-cat-title">Cloud &amp; DevOps</div>
       <div class="tech-chips">
-        <div class="tech-chip"><span class="aws-badge">AWS</span><span>AWS EC2</span></div>
-        <div class="tech-chip"><span class="aws-badge">AWS</span><span>AWS S3</span></div>
-        <div class="tech-chip"><span class="aws-badge">AWS</span><span>AWS Lambda</span></div>
-        <div class="tech-chip"><span class="aws-badge">AWS</span><span>AWS EKS</span></div>
-        <div class="tech-chip"><span class="aws-badge">AWS</span><span>SNS / SQS</span></div>
-        <div class="tech-chip"><span class="aws-badge">AWS</span><span>DynamoDB</span></div>
-        <div class="tech-chip"><span style="font-size:1.1rem">☁️</span><span>Azure ARM</span></div>
+        <div class="tech-chip"><span class="aws-badge">AWS</span><span>AWS ECS</span></div>
+        <div class="tech-chip"><span class="aws-badge">AWS</span><span>AWS RDS</span></div>
+        <div class="tech-chip"><span class="aws-badge">AWS</span><span>Elastic Beanstalk</span></div>
+        <div class="tech-chip"><span class="aws-badge">AWS</span><span>AWS SSM</span></div>
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/docker/docker-original.svg" alt="Docker"><span>Docker</span></div>
-        <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes"><span>Kubernetes</span></div>
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/jenkins/jenkins-original.svg" alt="Jenkins"><span>Jenkins CI/CD</span></div>
-        <div class="tech-chip"><span style="font-size:1.1rem">📦</span><span>PCF</span></div>
+        <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+        <div class="tech-chip"><span style="font-size:1.1rem">📦</span><span>Maven</span></div>
       </div>
     </div>
 
@@ -822,36 +869,19 @@ nav.scrolled { background:rgba(7,1,15,0.97); box-shadow:0 4px 30px rgba(0,0,0,0.
       <div class="tech-cat-title">Databases</div>
       <div class="tech-chips">
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span></div>
-        <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/oracle/oracle-original.svg" alt="Oracle"><span>Oracle</span></div>
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"><span>PostgreSQL</span></div>
-        <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/cassandra/cassandra-original.svg" alt="Cassandra"><span>Cassandra</span></div>
-        <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch"><span>Elasticsearch</span></div>
-        <div class="tech-chip"><span style="font-size:1.1rem">🗄️</span><span>IBM DB2</span></div>
       </div>
     </div>
 
     <div>
-      <div class="tech-cat-title">Messaging &amp; APIs</div>
-      <div class="tech-chips">
-        <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/apachekafka/apachekafka-original.svg" alt="Kafka"><span>Apache Kafka</span></div>
-        <div class="tech-chip"><span style="font-size:1.1rem">📨</span><span>ActiveMQ / JMS</span></div>
-        <div class="tech-chip"><span style="font-size:1.1rem">🔀</span><span>Eureka / Zuul</span></div>
-        <div class="tech-chip"><span style="font-size:1.1rem">📋</span><span>Swagger / OpenAPI</span></div>
-        <div class="tech-chip"><span style="font-size:1.1rem">🔌</span><span>JAX-WS / JAX-RS</span></div>
-      </div>
-    </div>
-
-    <div>
-      <div class="tech-cat-title">Testing &amp; Tools</div>
+      <div class="tech-cat-title">Testing &amp; Quality</div>
       <div class="tech-chips">
         <div class="tech-chip"><span style="font-size:1.1rem">✅</span><span>JUnit</span></div>
         <div class="tech-chip"><span style="font-size:1.1rem">🧪</span><span>Mockito</span></div>
-        <div class="tech-chip"><span style="font-size:1.1rem">🥒</span><span>Cucumber BDD</span></div>
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/postman/postman-original.svg" alt="Postman"><span>Postman</span></div>
-        <div class="tech-chip"><span style="font-size:1.1rem">📊</span><span>JMeter</span></div>
-        <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/git/git-original.svg" alt="Git"><span>Git / SVN</span></div>
-        <div class="tech-chip"><span style="font-size:1.1rem">📦</span><span>Maven / Gradle</span></div>
+        <div class="tech-chip"><span style="font-size:1.1rem">🔍</span><span>SonarQube</span></div>
+        <div class="tech-chip"><span style="font-size:1.1rem">📋</span><span>Swagger / OpenAPI</span></div>
         <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/jira/jira-original.svg" alt="JIRA"><span>JIRA / Agile</span></div>
       </div>
     </div>
@@ -866,93 +896,71 @@ nav.scrolled { background:rgba(7,1,15,0.97); box-shadow:0 4px 30px rgba(0,0,0,0.
 <section id="experience">
   <div class="section-eyebrow">Work History</div>
   <h2 class="section-title">Professional Experience</h2>
-  <p class="section-sub">6+ years across enterprise-level engineering environments in the US and India.</p>
+  <p class="section-sub">3+ years across enterprise-level engineering environments in the United States.</p>
 
   <div class="timeline">
 
-    <div class="exp-item reveal-left">
+    <div class="exp-item reveal">
       <div class="exp-dot"></div>
       <div class="exp-card">
         <div class="exp-header">
-          <div class="exp-title">Java Full Stack Developer</div>
-          <div class="exp-date-badge">Jul 2023 – Present</div>
+          <div class="exp-title">Full Stack Software Engineer</div>
+          <div class="exp-date-badge">Jul 2024 – Present</div>
         </div>
-        <div class="exp-company">Digital Realty &nbsp;·&nbsp; Austin, Texas, USA</div>
+        <div class="exp-company">Digital Realty &nbsp;·&nbsp; Dallas, Texas, USA</div>
         <ul class="exp-bullets">
-          <li>Architected event-driven jobs on AWS — S3, DynamoDB, SNS, SQS, Lambda with Java.</li>
-          <li>Developed RESTful microservices with Spring Boot; deployed to Docker on Amazon ECS.</li>
-          <li>Built React.js UIs with Redux state management and NPM component ecosystem.</li>
-          <li>Implemented Spring Netflix Zuul API gateway and Eureka service registry.</li>
-          <li>Deployed CI/CD pipelines via Jenkins; orchestrated with Kubernetes on AWS EKS.</li>
-          <li>Secured REST APIs with OAuth 2.0; documented with Swagger UI.</li>
-          <li>Integrated Kafka consumers for data pipeline; Elasticsearch caching for performance.</li>
+          <li>Designed and developed highly available microservices-based backend applications using Java and Spring Boot to support enterprise internal platforms and reporting systems.</li>
+          <li>Built and maintained RESTful APIs integrating internal and external systems, enabling secure communication between distributed backend services and Angular frontends.</li>
+          <li>Implemented authentication and role-based authorization using Spring Security and JWT to secure APIs and protect sensitive business data.</li>
+          <li>Containerized backend services using Docker and supported deployments in AWS ECS as part of cloud-based infrastructure.</li>
+          <li>Built and maintained CI/CD pipelines using Jenkins and Git, enabling automated build, test, and deployment across environments.</li>
+          <li>Investigated and resolved production incidents by analyzing logs, debugging service behavior, and implementing performance improvements.</li>
         </ul>
         <div class="exp-tags">
-          <span class="exp-tag">Java 8</span><span class="exp-tag">Spring Boot</span><span class="exp-tag">React</span><span class="exp-tag">AWS</span><span class="exp-tag">Kafka</span><span class="exp-tag">Kubernetes</span><span class="exp-tag">Docker</span><span class="exp-tag">MongoDB</span><span class="exp-tag">Cassandra</span><span class="exp-tag">Jenkins</span><span class="exp-tag">PCF</span>
+          <span class="exp-tag">Java</span><span class="exp-tag">Spring Boot</span><span class="exp-tag">Spring Security</span><span class="exp-tag">JWT</span><span class="exp-tag">Microservices</span><span class="exp-tag">MongoDB</span><span class="exp-tag">Angular</span><span class="exp-tag">Docker</span><span class="exp-tag">AWS ECS</span><span class="exp-tag">Jenkins</span><span class="exp-tag">SonarQube</span>
         </div>
       </div>
     </div>
 
-    <div class="exp-item reveal-left">
+    <div class="exp-item reveal">
       <div class="exp-dot"></div>
       <div class="exp-card">
         <div class="exp-header">
           <div class="exp-title">Java Full Stack Developer</div>
-          <div class="exp-date-badge">Dec 2021 – Jun 2023</div>
+          <div class="exp-date-badge">May 2023 – Jun 2024</div>
         </div>
         <div class="exp-company">Crown Castle &nbsp;·&nbsp; Houston, Texas, USA</div>
         <ul class="exp-bullets">
-          <li>Led next-generation microservices development using Apache Kafka and REST with OAuth 2.0.</li>
-          <li>Provisioned cloud resources via Azure Resource Manager (ARM) templates.</li>
-          <li>Implemented SOAP/JAX-WS web services; performance-tested with JMeter.</li>
-          <li>Built cross-platform server-side apps with Node.js, Backbone.js, and AngularJS.</li>
-          <li>Maintained and improved CI/CD pipelines; integrated Docker for continuous delivery.</li>
-          <li>Used JMS for reliable asynchronous messaging including payment status reports.</li>
+          <li>Designed and developed backend services using Java and Spring Boot supporting RESTful APIs integrated with AWS RDS databases.</li>
+          <li>Implemented robust data access layers using JPA/Hibernate and optimized complex SQL queries to improve performance and data consistency.</li>
+          <li>Deployed and managed application builds using AWS Elastic Beanstalk across multiple environment configurations.</li>
+          <li>Refactored legacy codebase applying modern design patterns and clean coding practices to improve system stability and long-term maintainability.</li>
+          <li>Developed Angular-based UI components and integrated frontend modules with backend REST APIs, implementing client-side validations.</li>
+          <li>Wrote unit test cases using JUnit and participated in peer code reviews to maintain high code quality standards.</li>
         </ul>
         <div class="exp-tags">
-          <span class="exp-tag">Java</span><span class="exp-tag">Spring</span><span class="exp-tag">AngularJS</span><span class="exp-tag">Kafka</span><span class="exp-tag">Azure</span><span class="exp-tag">Docker</span><span class="exp-tag">Node.js</span><span class="exp-tag">MongoDB</span><span class="exp-tag">Oracle</span><span class="exp-tag">CI/CD</span>
+          <span class="exp-tag">Java</span><span class="exp-tag">Spring Boot</span><span class="exp-tag">JPA/Hibernate</span><span class="exp-tag">AWS RDS</span><span class="exp-tag">Elastic Beanstalk</span><span class="exp-tag">Angular</span><span class="exp-tag">Docker</span><span class="exp-tag">Maven</span><span class="exp-tag">JUnit</span><span class="exp-tag">JIRA</span>
         </div>
       </div>
     </div>
 
-    <div class="exp-item reveal-left">
+    <div class="exp-item reveal">
       <div class="exp-dot"></div>
       <div class="exp-card">
         <div class="exp-header">
-          <div class="exp-title">Java Full Stack Developer</div>
+          <div class="exp-title">Associate Software Engineer</div>
           <div class="exp-date-badge">Mar 2021 – Aug 2021</div>
         </div>
-        <div class="exp-company">Nordstrom via Infosys &nbsp;·&nbsp; Bangalore, India</div>
+        <div class="exp-company">Nordstrom &nbsp;·&nbsp; Bangalore, India</div>
         <ul class="exp-bullets">
-          <li>Migrated monolithic app to Spring Boot Microservices using 12-factor methodology.</li>
-          <li>Used Java 8 Lambda expressions, Stream API, and bulk collection operations.</li>
-          <li>Built responsive UI with HTML5, CSS3, Bootstrap, JavaScript, jQuery, and AJAX.</li>
-          <li>Deployed Spring Boot microservices on AWS CloudFormation into EC2 containers.</li>
-          <li>Integrated Clojure microservices; managed front-end builds with Grunt and BowerJS.</li>
+          <li>Assisted in backend development using Core Java by implementing service and DAO layers for internal web applications.</li>
+          <li>Developed UI components using HTML, CSS, JavaScript, and JSP to support user workflows and data entry screens.</li>
+          <li>Wrote SQL queries for data retrieval, validation, and basic reporting requirements using MySQL.</li>
+          <li>Supported application deployment and testing on Apache Tomcat servers in Linux environments.</li>
+          <li>Applied OOP principles such as encapsulation and inheritance while developing application modules in Agile sprints.</li>
         </ul>
         <div class="exp-tags">
-          <span class="exp-tag">Java 8</span><span class="exp-tag">Spring Boot</span><span class="exp-tag">React</span><span class="exp-tag">AWS EC2</span><span class="exp-tag">Node.js</span><span class="exp-tag">HTML5/CSS3</span><span class="exp-tag">Microservices</span><span class="exp-tag">PCF</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="exp-item reveal-left">
-      <div class="exp-dot"></div>
-      <div class="exp-card">
-        <div class="exp-header">
-          <div class="exp-title">Java Developer</div>
-          <div class="exp-date-badge">Jun 2018 – Feb 2021</div>
-        </div>
-        <div class="exp-company">Medreich Limited &nbsp;·&nbsp; Bangalore, India</div>
-        <ul class="exp-bullets">
-          <li>Designed Microservices with Spring Boot 2.0 and Spring REST.</li>
-          <li>Migrated tables from SQL Server to Cassandra; wrote optimized CQL queries.</li>
-          <li>Developed Acceptance Testing Framework using Cucumber BDD and JUnit.</li>
-          <li>Implemented RESTful web services (Jersey/JAX-RS) producing XML and JSON.</li>
-          <li>Used Hibernate ORM with Oracle; implemented multi-threaded JMS queues.</li>
-        </ul>
-        <div class="exp-tags">
-          <span class="exp-tag">Java 8</span><span class="exp-tag">Spring Boot</span><span class="exp-tag">Hibernate</span><span class="exp-tag">Cassandra</span><span class="exp-tag">MongoDB</span><span class="exp-tag">Jenkins</span><span class="exp-tag">JUnit</span><span class="exp-tag">Oracle</span><span class="exp-tag">RESTful</span><span class="exp-tag">JMS</span>
+          <span class="exp-tag">Core Java</span><span class="exp-tag">JSP</span><span class="exp-tag">HTML/CSS</span><span class="exp-tag">JavaScript</span><span class="exp-tag">MySQL</span><span class="exp-tag">Apache Tomcat</span><span class="exp-tag">Linux</span><span class="exp-tag">Eclipse</span>
         </div>
       </div>
     </div>
@@ -970,24 +978,24 @@ nav.scrolled { background:rgba(7,1,15,0.97); box-shadow:0 4px 30px rgba(0,0,0,0.
   <p class="section-sub">Formal education and professional certifications in Computer Science.</p>
 
   <div class="edu-grid">
-    <div class="edu-card reveal-scale">
+    <div class="edu-card reveal">
       <span class="edu-icon">🎓</span>
       <div class="edu-degree">Master of Science</div>
       <div class="edu-field">Computer Science</div>
-      <div class="edu-school">University of Houston</div>
+      <div class="edu-school">University of Houston Clear Lake</div>
       <div class="edu-date">Aug 2021 – May 2023 &nbsp;·&nbsp; Texas, USA</div>
     </div>
-    <div class="edu-card reveal-scale">
-      <span class="edu-icon">☕</span>
-      <div class="edu-degree">Oracle Certified Professional</div>
-      <div class="edu-field">Java SE Developer</div>
-      <div class="edu-school">Oracle Corporation</div>
-      <div class="edu-date active">✦ Active Certification</div>
+    <div class="edu-card reveal">
+      <span class="edu-icon">🎓</span>
+      <div class="edu-degree">Bachelor of Engineering</div>
+      <div class="edu-field">Computer Science &amp; Engineering</div>
+      <div class="edu-school">Bapatla Engineering College</div>
+      <div class="edu-date">Completed May 2020 &nbsp;·&nbsp; India</div>
     </div>
-    <div class="edu-card reveal-scale">
+    <div class="edu-card reveal">
       <span class="edu-icon">☁️</span>
-      <div class="edu-degree">AWS Certified Developer</div>
-      <div class="edu-field">Associate</div>
+      <div class="edu-degree">AWS Certified</div>
+      <div class="edu-field">Solutions Architect – Associate</div>
       <div class="edu-school">Amazon Web Services</div>
       <div class="edu-date active">✦ Active Certification</div>
     </div>
@@ -1005,15 +1013,15 @@ nav.scrolled { background:rgba(7,1,15,0.97); box-shadow:0 4px 30px rgba(0,0,0,0.
     <p class="section-sub" style="margin:0 auto 0;">Open to full-time roles, consulting, and technical collaborations. Reach out and I'll respond promptly.</p>
 
     <div class="contact-cards reveal">
-      <a href="tel:2818166875" class="contact-card">
+      <a href="tel:3462036169" class="contact-card">
         <span class="contact-icon">📞</span>
         <div class="contact-lbl">Phone</div>
-        <div class="contact-val">281-816-6875</div>
+        <div class="contact-val">(346) 203-6169</div>
       </a>
-      <a href="mailto:Gowthamdoppalapudi3@gmail.com" class="contact-card">
+      <a href="mailto:doppalapudigowtham68@gmail.com" class="contact-card">
         <span class="contact-icon">✉️</span>
         <div class="contact-lbl">Email</div>
-        <div class="contact-val">Gowthamdoppalapudi3@gmail.com</div>
+        <div class="contact-val">doppalapudigowtham68@gmail.com</div>
       </a>
       <div class="contact-card" style="cursor:default;">
         <span class="contact-icon">📍</span>
@@ -1024,7 +1032,7 @@ nav.scrolled { background:rgba(7,1,15,0.97); box-shadow:0 4px 30px rgba(0,0,0,0.
 
     <div class="contact-form-wrap reveal">
       <div class="form-title">Send a Message</div>
-      <form id="contactForm" action="https://formsubmit.co/Gowthamdoppalapudi3@gmail.com" method="POST">
+      <form id="contactForm" action="https://formsubmit.co/doppalapudigowtham68@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_subject" value="Portfolio Inquiry from Contact Form">
         <input type="hidden" name="_template" value="table">
@@ -1254,7 +1262,7 @@ nav.scrolled { background:rgba(7,1,15,0.97); box-shadow:0 4px 30px rgba(0,0,0,0.
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 90); });
 }, { threshold: 0.07 });
-document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => revealObs.observe(el));
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
 /* contact form — async submit with success state */
 (function() {
@@ -1295,70 +1303,6 @@ window.addEventListener('scroll', () => {
   sections.forEach(s => { if (window.scrollY >= s.offsetTop - 130) cur = s.id; });
   navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
 }, { passive: true });
-
-/* scroll progress + nav scrolled state */
-(function() {
-  const bar = document.getElementById('scroll-progress');
-  const nav = document.querySelector('nav');
-  window.addEventListener('scroll', () => {
-    bar.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + '%';
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  }, { passive: true });
-})();
-
-/* hero parallax */
-(function() {
-  const hc = document.querySelector('.hero-content');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY < window.innerHeight)
-      hc.style.transform = 'translateY(' + (window.scrollY * 0.18) + 'px)';
-  }, { passive: true });
-})();
-
-/* stat counter animation */
-(function() {
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const raw = el.textContent.trim();
-      const m = raw.match(/^(\d+)/);
-      if (!m) return;
-      const end = +m[1], suffix = raw.slice(m[1].length);
-      let cur = 0;
-      const step = Math.max(1, Math.ceil(end / 32));
-      const t = setInterval(() => {
-        cur = Math.min(cur + step, end);
-        el.textContent = cur + suffix;
-        if (cur >= end) clearInterval(t);
-      }, 35);
-      obs.unobserve(el);
-    });
-  }, { threshold: 0.9 });
-  document.querySelectorAll('.stat-num').forEach(el => obs.observe(el));
-})();
-
-/* stagger tech chips on scroll */
-(function() {
-  document.querySelectorAll('.tech-chips').forEach(row => {
-    row.querySelectorAll('.tech-chip').forEach((c, i) => {
-      c.style.opacity = '0';
-      c.style.transform = 'translateY(14px)';
-      c.style.transition = 'opacity 0.38s ease ' + (i * 48) + 'ms, transform 0.38s ease ' + (i * 48) + 'ms';
-    });
-  });
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.querySelectorAll('.tech-chip').forEach(c => {
-        c.style.opacity = '1';
-        c.style.transform = 'none';
-      });
-      obs.unobserve(e.target);
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.tech-chips').forEach(r => obs.observe(r));
-})();
 </script>
 </body>
 </html>
